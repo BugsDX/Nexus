@@ -131,7 +131,9 @@ namespace Core
 	/** BigNum Global Externals **/
 	extern CBigNum bnProofOfWorkLimit[];
 	extern CBigNum bnProofOfWorkStart[];
-	
+	extern CBigNum bnProofOfWorkLimitRegtest[];
+	extern CBigNum bnProofOfWorkStartRegtest[];
+
 	/** Chain Trust **/
 	extern uint64 nBestChainTrust;
 	
@@ -677,13 +679,15 @@ namespace Core
 	{
 	private:
 		mutable CCriticalSection cs;
-		mutable std::map<uint576, CTrustKey> mapTrustKeys;
 
 	public:
-		/** The Trust Key Owned By Current Node. **/
+		/* The trust keys stored into the trust pool. */
+		mutable std::map<uint576, CTrustKey> mapTrustKeys;
+		
+		/* The Trust Key Owned By Current Node. */
 		std::vector<unsigned char>   vchTrustKey;
 		
-		/** Helper Function to Find Trust Key. **/
+		/* Helper Function to Find Trust Key. */
 		bool HasTrustKey(unsigned int nTime);
 		
 		bool Check(CBlock cBlock);
