@@ -496,7 +496,7 @@ Tem certeza de que deseja criptografar sua carteira?</translation>
     <message numerus="yes">
         <location filename="../core/gui.cpp" line="449"/>
         <source>%n active connection(s) to Nexus network</source>
-        <translation>%n conexões ativa(s) na rede Nexus</translation>
+        <translation><numerusform>%n Conexão ativa com a rede Nexus</numerusform><numerusform>%n Conexões ativas com a rede Nexus</numerusform></translation>
     </message>
     <message>
         <location filename="../core/gui.cpp" line="475"/>
